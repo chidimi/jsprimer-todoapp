@@ -1,4 +1,4 @@
-export function escapseSpecialChars(str){
+export function escapeSpecialChars(str){
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -25,9 +25,9 @@ export function element(strings, ...values){
   const htmlString = strings.reduce((result, str, i) => {
     const value = values[i - 1];
     if(typeof value === "string"){
-      return result + escapseSpecialChars(value) + str;
+      return result + escapeSpecialChars(value) + str;
     } else {
-      return reulst + String(value) + str;
+      return result + String(value) + str;
     }
   });
   return htmlToElement(htmlString);

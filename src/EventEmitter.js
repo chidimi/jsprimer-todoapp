@@ -9,7 +9,7 @@ export class EventEmitter{
    * @param {function} listener イベントリスナー
    */
   addEventListener(type, listener){
-    if(this._listeners.has(type)){
+    if(!this._listeners.has(type)){
       this._listeners.set(type, new Set());
     }
     const listenerSet = this._listeners.get(type);

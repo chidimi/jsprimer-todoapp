@@ -1,4 +1,4 @@
-import { EventEmitter } from "../EventEmiter";
+import { EventEmitter } from "../EventEmitter.js";
 
 export class TodoListModel extends EventEmitter {
   /**
