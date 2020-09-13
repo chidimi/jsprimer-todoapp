@@ -41,6 +41,10 @@ export class TodoListModel extends EventEmitter {
    * @param {TodoItemModel} TodoItemの合計個数を返す
    */
   addTodo(todoItem){
+    if(todoItem.title.length === 0){
+      return;
+    }
+
     this.items.push(todoItem);
     this.emitChange();
   }
